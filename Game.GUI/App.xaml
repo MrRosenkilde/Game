@@ -23,9 +23,9 @@
         <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>
         <DataTemplate x:Key="ResourceTemplate"
             DataType="{x:Type resources:Resource}">
-            <Border Background="{StaticResource Background}"
+            <Border 
                 Padding="3"
-                BorderBrush="{Binding Path=Type, Converter={StaticResource RTypeToLinearGradientConverter}}">
+                Background="{Binding Path=Type, Converter={StaticResource RTypeToLinearGradientConverter}}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
@@ -35,11 +35,13 @@
                     <TextBlock Grid.Column="0"
                         Text="{Binding Path=Type, Converter={StaticResource RTypeConverter}}"
                         TextAlignment="Left"
-                        VerticalAlignment="Top"/>
+                        VerticalAlignment="Top"
+                        Foreground="White"/>
 
                     <TextBlock Grid.Column="1"
                         Text="{Binding Path=Amount}"
-                        TextAlignment="Right"/>
+                        TextAlignment="Right"
+                        Foreground="White"/>
                 </Grid>
             </Border>
         </DataTemplate>

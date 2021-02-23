@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Game.Resources\Game.Resources.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
-
 </Project>

@@ -15,8 +15,8 @@ namespace Game.GUI.Converters
         private static Color ColorFor(RAttr attr) 
             => attr switch
             {
-                RAttr.None => Colors.Black,
-                RAttr.Crafting => Colors.Blue,
+                RAttr.None => Colors.Pink,
+                RAttr.Crafting => Colors.DarkBlue,
                 RAttr.Burnable => Colors.OrangeRed,
                 RAttr.Editable => Colors.Green,
                 RAttr.Plant => Colors.ForestGreen,
@@ -35,12 +35,15 @@ namespace Game.GUI.Converters
                 int count = 0;
                 foreach (var flag in flags)
                 {
+                    var color = ColorFor(flag);
                     gsc.Add(
-                    new GradientStop(ColorFor(flag), 0));
+                        new GradientStop(color, 0)
+                    );
                     count++;
                 }
-                for (int i = 0; i < count; i++)
-                    gsc[i].Offset = i / (float)count;
+                for (int i = 0; i < count;) {
+                    gsc[i].Offset = (++i) / (float)count;
+                }
 
                 return new LinearGradientBrush(gsc, 45d);
             }

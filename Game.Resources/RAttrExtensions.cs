@@ -7,16 +7,14 @@ namespace Game.Resources
 {
     public static class RAttrExtensions
     {
-        private readonly static RAttr[] AllAttributes =
-            Enum.GetValues(typeof(RAttr))
-            .Cast<RAttr>()
-            .ToArray();
+        //private readonly static RAttr AllAttributes
 
         public static IEnumerable<RAttr> GetFlags(this RAttr attr) 
         {
-            foreach (var flag in AllAttributes)
-                if (attr.HasFlag(flag))
-                    yield return flag;
+            long max = (long)Math.Pow(2, 32);
+            for (long i = 0x1; i < max; i = i<<1)
+                if (attr.HasFlag((RAttr)i))
+                    yield return (RAttr)i;
         }
     }
 }

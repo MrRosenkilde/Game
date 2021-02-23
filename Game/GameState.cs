@@ -14,6 +14,7 @@ namespace Game
                 .Cast<RType>()
                 .Select(x => new Resource(x))
                 .ToArray();
+
         public GameState() {}
 
     }

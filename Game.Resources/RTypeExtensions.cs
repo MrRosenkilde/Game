@@ -52,7 +52,7 @@ namespace Game.Resources
                 RType.BlackBear          => RAttr.Editable | RAttr.Meat | RAttr.Dangerous,
                 RType.GrizzlyBear        => RAttr.Editable | RAttr.Meat | RAttr.Dangerous,
                 RType.Moose              => RAttr.Editable | RAttr.Meat | RAttr.Dangerous,
-                _                        => RAttr.None
+                _                        => 0
             };
     }
 }
