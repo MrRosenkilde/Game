@@ -1,0 +1,83 @@
+﻿I want the game to be a slow paced idle game where a person
+wakes up in a world with no technology and has to get to work to start living
+by gathering resources and food it will be possible to survive.
+Contrary to many other idle games i want it to be possible to lose or deprogress,
+deprogression should happen if the player mismanages resources, for example having
+too much population and not enough food.
+However it should always be possible to leave the game in a state where deprogression is
+impossible, so the player isn't forced to return to it within a set time frame.
+
+The games main mechanics should consist of population jobs and resources.
+early jobs could be:
+
+gathering sticks,
+gathering stones,
+gathering berries,
+hunting for food,
+thinking,
+exploring,
+build shelter,
+play / hobbies (to increase happiness)
+
+when the player works the player should lose stamina, and when stamina runs low
+the player will have to tend to jobs that doesn't require stamina, like thinking,
+resting, being creative, playing, relaxing with family, look into a fire.
+There could be hobbies that will earn the player better stats, excercise could improve stamina
+and playing music could improve intellect.
+
+even though the main character will be important early game, i want the game to develop
+into a management game, where workers are a resource, and it's not perticularly about
+the main character anymore, except as a point of view from which the story can be told.
+Maybe the main character will become a mayor, and be the one doing the management,
+or the manager a.k.a the real life player, could be some unknown entity that some
+IG workers make humourous comments about from time to time.
+
+
+when the player thinks he will think up new ideas, like combining sticks and stone to an axe
+which will open up new jobs: cutting wood instead of only gathering.
+I want the game to have lots of different resources, and always specific resources.
+Nothing generic like "food". Food or editable can be a resource trait, but should never be
+the resource itself. 
+So: black berries, elder berries, blue berries, strawberries and ofcourse also other editable plants that i will google later. 
+likewise with meat: deer meat, boar meat, rabbit meat, never just "meat".
+Hunted animals should also give fur claws/teeth, and the likes.
+There should be spoilage to resources if the player doesn't have the proper technologies / storage
+capabilities. And some resources spoil fast while others spoild slowly.
+Bones are way more durable then meat.
+Houses lasts for a very long time.
+likewise; a shelter should also degrade over time, and even get destroyed,
+if the player doesn't set aside time to do repair work (repairs could also be a job).
+
+It should be possible to hunt animals with traps, but traps should first be build.
+A trap could be build from sticks and rope, rope could, at first, be made from plants.
+And later some other material. I'll have to do a lot of reading up on how things are made
+and what materials are used in different processes.
+
+The game could implement weather: 
+in rainy or stormy weather degration will happen faster.
+The players mood will also decrease if appropiate measure aren't taken.
+If the player is working outside they can feel cold in bad weather.
+And in good weather the players mood will better, and they will feel more optimistic.
+managing mood/happiness should affect the players productivity.
+Maybe they can even get depressed or sick and only attend to hobbies and not do any "hard work"
+for a while.
+
+The game should be punishing if risks aren't being handled.
+If no shelter are being build, if food isn't stored, if there's too many people and not enough
+houses, if a population are overworked and doesn't have time to do hobbies and things they enjoy,
+if there's not enough entertainment.
+If people are starving they won't be productive.
+The game is about surviving and thriving.
+But survival is hard work, and mistakes can be catastrophic.
+I don't want the player to get completely demotivated,
+idle games take a long time, and most people would quit if they loose too much progress.
+So it's not that if you don't have food your population will slowly just die out,
+and you will come back after 3 days and your whole civilization has ended.
+The game should shelter into certain resting places where production meets demand.
+And the player doesn't loose too much progress.
+
+
+
+
+
+

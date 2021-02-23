@@ -1,0 +1,47 @@
+﻿<Application x:Class="Game.GUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cvt="clr-namespace:Game.GUI.Converters"
+             xmlns:resources="clr-namespace:Game.Resources;assembly=Game.Resources"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush 
+            x:Key="Background" 
+            Color="#fefefe"/>
+        <Style TargetType="{x:Type Window}" x:Key="DefaultWindow">
+            <Setter Property="Background" Value="#fff"/>
+        </Style>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Background" Value="#ededf0"/>
+            <Setter Property="BorderBrush" Value="#aaa"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <cvt:FixScrollViewerWidthConverter x:Key="FixScrollWidthConverter"/>
+        <cvt:ResourceAmountConverter x:Key="ResourceAmountConverter"/>
+        <cvt:RTypeConverter x:Key="RTypeConverter"/>
+        <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>
+        <DataTemplate x:Key="ResourceTemplate"
+            DataType="{x:Type resources:Resource}">
+            <Border Background="{StaticResource Background}"
+                Padding="3"
+                BorderBrush="{Binding Path=Type, Converter={StaticResource RTypeToLinearGradientConverter}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Row 0-->
+                    <TextBlock Grid.Column="0"
+                        Text="{Binding Path=Type, Converter={StaticResource RTypeConverter}}"
+                        TextAlignment="Left"
+                        VerticalAlignment="Top"/>
+
+                    <TextBlock Grid.Column="1"
+                        Text="{Binding Path=Amount}"
+                        TextAlignment="Right"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
