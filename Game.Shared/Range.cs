@@ -23,5 +23,9 @@ namespace Game.Shared
 
         public static implicit operator Range((int from, int to) range)
             => new Range(range.from, range.to);
+
+        
+        public bool Contains(int val)
+            => val >= From && To > val;
     }
 }

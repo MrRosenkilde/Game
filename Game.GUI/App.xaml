@@ -17,10 +17,10 @@
             <Setter Property="BorderBrush" Value="#aaa"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
-        <cvt:FixScrollViewerWidthConverter x:Key="FixScrollWidthConverter"/>
+        <!--<cvt:FixScrollViewerWidthConverter x:Key="FixScrollWidthConverter"/>
         <cvt:ResourceAmountConverter x:Key="ResourceAmountConverter"/>
         <cvt:RTypeConverter x:Key="RTypeConverter"/>
-        <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>
+        <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>-->
         <DataTemplate x:Key="ResourceTemplate"
             DataType="{x:Type resources:Resource}">
             <Border 

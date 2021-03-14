@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
@@ -14,8 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Game.Jobs\Game.Jobs.csproj" />
-    <ProjectReference Include="..\Game.Resources\Game.Resources.csproj" />
+    <ProjectReference Include="..\Game.Shared\Game.Shared.csproj" />
   </ItemGroup>
 
 </Project>

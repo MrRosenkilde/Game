@@ -18,8 +18,7 @@ namespace Game.GUI.Converters
             for (int i = 1, spaces = 0; i < text.Length; i++) {
                 if (char.IsUpper(text[i]))
                 {
-                    result[i + spaces] = ' ';
-                    spaces++;
+                    result[i + spaces++] = ' ';
                     result[i + spaces] = text[i];
                 }
                 else result[i + spaces] = text[i];

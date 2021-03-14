@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Game.Resources
 {
-    public struct Resource
+    public class Resource
     {
-        public uint Amount { get; private set; }
+        public BigInteger Amount { get; private set; } = 0u;
         public RType Type { get; }
-        public RAttr Attributes { get; }
-
 
         public Resource(RType type)
             : this(0u, type) { }
@@ -17,7 +16,6 @@ namespace Game.Resources
         {
             Amount = start_amount;
             Type = type;
-            Attributes = type.Attributes();
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace Game.Resources
     public enum RAttr
     {
         None        =  0,
-        Crafting    =  1,
+        Crafting   =  1,
         Editable    =  2,
         Burnable    =  4,
         Shroom      =  8,

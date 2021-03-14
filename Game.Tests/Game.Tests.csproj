@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Game.Jobs\Game.Jobs.csproj" />
     <ProjectReference Include="..\Game.People\Game.People.csproj" />
     <ProjectReference Include="..\Game.Resources\Game.Resources.csproj" />
+    <ProjectReference Include="..\Game.SIUnits\Game.SIUnits.csproj" />
   </ItemGroup>
 
 </Project>
