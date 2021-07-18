@@ -22,7 +22,7 @@ namespace Game.Tests
             AreEqual(1, b.Relations.Count);
             AreEqual(b, a.Relations.First().RelatesTo);
             AreEqual(a, b.Relations.First().RelatesTo);
-            AreEqual(RelationType.Mother,   a.Relations.First().RelationType);
+            AreEqual(RelationType.Mother, a.Relations.First().RelationType);
             AreEqual(RelationType.Daughter, b.Relations.First().RelationType);
             
         }
