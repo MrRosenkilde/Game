@@ -2,6 +2,8 @@
 {
     public readonly struct CubicMetre : IUnit
     {
-        public string Symbol => "m3";
+        public string Symbol => "m^3";
+
+        public string Name => "cubic metre";
     }
 }

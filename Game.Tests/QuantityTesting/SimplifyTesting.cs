@@ -15,15 +15,16 @@ namespace Game.Tests.QuantityTesting
         [TestMethod]
         public void Simplifying1200MetreIs1Dot2Kilometre() 
         {
-            Length l = 1200d;
+            Length l = (Length)1200d;
             var ls = l.Simplify().Simplify();
+            
             AreEqual(1.2d, ls.Value);
         }
 
         [TestMethod]
         public void Simplifying1200YottaMetreIsStill1200YottaMetre() 
         {
-            Length l = 1200E+24;
+            Length l = (Length) 1200E+24;
             var ls = l.Simplify().Simplify(); //simplify twice for testing reasons
             AreEqual(1200, ls.Value);
             AreEqual(24, ls.Prefix.Power);
@@ -32,7 +33,7 @@ namespace Game.Tests.QuantityTesting
         [TestMethod]
         public void SimplifyingANegativeValueIsOk() 
         {
-            Length l = -1200d;
+            Length l = (Length) (-1200d);
             var ls = l.Simplify();
             AreEqual(-1.2, ls.Value);
             AreEqual(3, ls.Prefix.Power);
@@ -41,7 +42,7 @@ namespace Game.Tests.QuantityTesting
         [TestMethod]
         public void ZeroPoint001Is1Milimetre()
         {
-            Length l = 0.001;
+            Length l = (Length) 0.001;
             var ls = l.Simplify().Simplify(); //simplify twice for testing reasons
             AreEqual(1, ls.Value);
             AreEqual(-3, ls.Prefix.Power);
@@ -49,7 +50,7 @@ namespace Game.Tests.QuantityTesting
         [TestMethod]
         public void ZeroPoint0001Is100MicroMetre()
         {
-            Length l = 0.0001;
+            Length l = (Length) (0.0001);
             var ls = l.Simplify().Simplify(); //simplify twice for testing reasons
             AreEqual(100, ls.Value);
             AreEqual(-6, ls.Prefix.Power);
@@ -58,7 +59,7 @@ namespace Game.Tests.QuantityTesting
         [TestMethod]
         public void ZeroPoint01Is100Milimetre()
         {
-            Length l = 0.1;
+            Length l = (Length) (0.1);
             var ls = l.Simplify().Simplify(); //simplify twice for testing reasons
             AreEqual(100, ls.Value);
             AreEqual(-3, ls.Prefix.Power);
@@ -70,7 +71,7 @@ namespace Game.Tests.QuantityTesting
             var r = new Random();
             for (int i = 0; i < 100_000; i++) 
             {
-                Length l = (r.Next(-999, 999) + r.NextDouble()) * Math.Pow(10, r.Next(-24, 24));
+                Length l = (Length) ((r.Next(-999, 999) + r.NextDouble()) * Math.Pow(10, r.Next(-24, 24)));
                 var ls = l.Simplify();
                 var lss = ls.Simplify();
                 AreEqual(ls.Value, lss.Value);
@@ -89,7 +90,7 @@ namespace Game.Tests.QuantityTesting
                 Console.WriteLine($"power: {power_roll}");
                 Console.WriteLine($"n: {n_roll}");
                 var val = n_roll * Math.Pow(10, power_roll);
-                Length l = val;
+                Length l = (Length) val;
                 l = l.Simplify();
                 var expected_power = (int)Math.Floor(Math.Log10(val) / 3) * 3;
                 var expected_n = val * Math.Pow(10, -(expected_power));

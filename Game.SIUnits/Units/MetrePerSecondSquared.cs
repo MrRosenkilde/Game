@@ -2,6 +2,8 @@
 {
     public readonly struct MetrePerSecondSquared : IUnit
     {
-        public string Symbol => "m/s2";
+        public string Symbol => "m/s^2";
+
+        public string Name => "metres per second squared";
     }
 }

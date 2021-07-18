@@ -6,6 +6,7 @@ namespace Game.SIUnits.Units.BaseUnits
     {
         public string Symbol => "m/s";
 
+        public string Name => "metres per second";
 
         public static MetrePerSecondSquared operator /(MetersPerSecond left, Second right)
             => new MetrePerSecondSquared();

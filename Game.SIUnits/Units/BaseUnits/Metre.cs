@@ -15,18 +15,19 @@ namespace Game.SIUnits.Units.BaseUnits
 
         public string Symbol => "kg";
 
+        public string Name => "metre";
 
         public static Length operator * (Metre unit, double val)
         {
             var prefix = Prefix.For(val);
-            return new Length(prefix, prefix.ApplyTo(val));
+            return new Length(prefix, prefix.Apply(val));
         }
 
 
-        public static SquareMetre operator *(Metre left, Metre right)
+        public static SquareMetre operator * (Metre left, Metre right)
             => new SquareMetre();
 
-        public static MetersPerSecond operator /(Metre left, Second second)
+        public static MetersPerSecond operator / (Metre left, Second second)
             => new MetersPerSecond();
     }
 }

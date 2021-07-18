@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="clr-namespan:Game.GUI.Views"
         xmlns:local="clr-namespace:Game.GUI"
         mc:Ignorable="d"
         Title="Game" 
@@ -32,7 +33,8 @@
             Margin="5">
             <TabControl Background="{StaticResource Background}">
                 <TabItem Header="Workers"></TabItem>
-                <TabItem Header="Jobs"></TabItem>
+                <TabItem Header="Jobs">
+                </TabItem>
                 <TabItem Header="Test"></TabItem>
             </TabControl>
         </Border>

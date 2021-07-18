@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:cvt="clr-namespace:Game.GUI.Converters"
              xmlns:resources="clr-namespace:Game.Resources;assembly=Game.Resources"
+             xmlns:v="clr-namespace:Game.GUI.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <SolidColorBrush 
             x:Key="Background" 
-            Color="#fefefe"/>
+            Color="Black"/>
         <Style TargetType="{x:Type Window}" x:Key="DefaultWindow">
             <Setter Property="Background" Value="#fff"/>
         </Style>
@@ -15,35 +16,21 @@
             <Setter Property="CornerRadius" Value="5"/>
             <Setter Property="Background" Value="#ededf0"/>
             <Setter Property="BorderBrush" Value="#aaa"/>
-            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderThickness" Value="2"/>
         </Style>
-        <!--<cvt:FixScrollViewerWidthConverter x:Key="FixScrollWidthConverter"/>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="Black"/>
+        </Style>
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Width" Value="10"/>
+        </Style>
+        <!--<cvt:FixScrollViewerWidthConverter x:Key="FixScrollWidthConverter"/>-->
         <cvt:ResourceAmountConverter x:Key="ResourceAmountConverter"/>
         <cvt:RTypeConverter x:Key="RTypeConverter"/>
-        <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>-->
+        <cvt:RTypeToLinearGradientConverter x:Key="RTypeToLinearGradientConverter"/>
         <DataTemplate x:Key="ResourceTemplate"
             DataType="{x:Type resources:Resource}">
-            <Border 
-                Padding="3"
-                Background="{Binding Path=Type, Converter={StaticResource RTypeToLinearGradientConverter}}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <!-- Row 0-->
-                    <TextBlock Grid.Column="0"
-                        Text="{Binding Path=Type, Converter={StaticResource RTypeConverter}}"
-                        TextAlignment="Left"
-                        VerticalAlignment="Top"
-                        Foreground="White"/>
-
-                    <TextBlock Grid.Column="1"
-                        Text="{Binding Path=Amount}"
-                        TextAlignment="Right"
-                        Foreground="White"/>
-                </Grid>
-            </Border>
+            <v:ResourceControl/>
         </DataTemplate>
     </Application.Resources>
 </Application>

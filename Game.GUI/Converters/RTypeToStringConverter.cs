@@ -10,6 +10,7 @@ namespace Game.GUI.Converters
 {
     public class RTypeConverter : IValueConverter
     {
+        
         private string MakePretty(string text) {
             if (string.IsNullOrEmpty(text))
                 return text;

@@ -15,7 +15,7 @@ namespace Game.SIUnits.BaseUnits
 
         public char DimensionSymbol => 'T';
 
-
+        public string Name => "second";
 
     }
 }

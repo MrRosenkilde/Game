@@ -1,5 +1,6 @@
 ﻿using Game.SIUnits.BaseUnits;
 using Game.SIUnits.Prefixes;
+using Game.SIUnits.Units;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Game.SIUnits.Quantities
 {
     public readonly struct Time : IQuantity
     {
-        public IBaseUnit Unit => new Second();
+        public IUnit Unit => new Second();
 
         public IPrefix Prefix { get; init; }
 
@@ -21,5 +22,9 @@ namespace Game.SIUnits.Quantities
             Prefix = prefix;
             Value = value;
         }
+
+        public IQuantity Construct(IPrefix prefix, double value)
+            => new Time(prefix, value);
+        
     }
 }

@@ -16,7 +16,7 @@ namespace Game.GUI.Converters
             => attr switch
             {
                 RAttr.None => Colors.Pink,
-                RAttr.Crafting => Colors.DarkBlue,
+                RAttr.Crafting => Colors.Magenta,
                 RAttr.Burnable => Colors.OrangeRed,
                 RAttr.Editable => Colors.Green,
                 RAttr.Plant => Colors.ForestGreen,
@@ -45,7 +45,9 @@ namespace Game.GUI.Converters
                     gsc[i].Offset = (++i) / (float)count;
                 }
 
-                return new LinearGradientBrush(gsc, 45d);
+                return new LinearGradientBrush(gsc, 45d) { 
+                    Opacity = .5
+                };
             }
             else return default;
         }

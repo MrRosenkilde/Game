@@ -14,25 +14,34 @@ namespace Game.Tests.PrefixTesting
     public class PrefixApplyTesting
     {
         [TestMethod]
-        public void ApplyToReturnsOrginalValue() 
+        public void ExpandIsTheSameAsNTimesPow10ToThePowerOfThePRefix() 
         {
             var r = new Random();
             for (int i = 0; i < 10_000; i++) { 
                 var n = r.NextDouble() + r.Next(-1000, 1000);
                 var pf = Prefix.Prefixes[r.Next(0, Prefix.Prefixes.Count - 1)];
-                AreEqual(n * Math.Pow(10, pf.Power), pf.ApplyTo(n));
+                AreEqual(n * Math.Pow(10, pf.Power), pf.Apply(n));
             }
         }
+        
+
 
         [TestMethod]
-        public void ApplyInverseReversesAnApplicationOfAPrefix()
+        public void ApplyAndExpandAreInverses()
         {
             var r = new Random();
             for (int i = 0; i < 10_000; i++)
             {
                 var n = r.NextDouble() * r.Next(int.MinValue, int.MaxValue);
-                var pf = Prefix.Prefixes[r.Next(0, Prefix.Prefixes.Count - 1)];
-                AreEqual(n, pf.ApplyInverseTo(pf.ApplyTo(n)), 5);
+                var prefix = Prefix.Prefixes[r.Next(0, Prefix.Prefixes.Count - 1)];
+                var _expanded = prefix.Apply(n);
+                var applied = prefix.ReverseApplication(_expanded);
+                AreEqual(
+                    expected: n, 
+                    actual: applied,
+                    5,
+                    $"n: {n} prefix: {prefix} _expanded: {_expanded} applied: {applied}"
+                );
             }
         }
 

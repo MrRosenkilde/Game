@@ -9,6 +9,5 @@ namespace Game.SIUnits.Prefixes
         int Power { get; }
         string LongSymbol { get; }
         char ShortSymbol { get; }
-        
     }
 }

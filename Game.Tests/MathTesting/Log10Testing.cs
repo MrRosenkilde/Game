@@ -1,48 +1,72 @@
-﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
-//using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using Game.Shared.Math;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Game.Shared.Math;
 
-//namespace Game.Tests.MathTesting
-//{
-//    [TestClass]
-//    public class Log10Testing
-//    {
-//        [TestMethod]
-//        public void RandomizedTesting() {
-//            var r = new Random();
-//            for (int i = 0; i < 100_000; i++) {
-//                var val = r.Next() * r.NextDouble();
-//                AreEqual(Math.Floor(Math.Log10(val)), FMath.Log10(val), $"{val} passed: {i}");
-//                //AreEqual(Math.Log10(val), FMath.Log10(val), 3, $"{val}");
-//            }
-//        }
+namespace Game.Tests.MathTesting
+{
 
-//        [TestMethod]
-//        public void BetweenZeroAndOne()
-//        {
-//            var r = new Random();
-//            for (int i = 0; i < 100_000; i++)
-//            {
-//                var val = r.NextDouble();
-//                AreEqual(Math.Floor(Math.Log10(val)), FMath.Log10(val), $"{val}");
-//                //AreEqual(Math.Log10(val), FMath.Log10(val), 3, $"{val}");
-//            }
-//        }
+    [TestClass]
+    public class Log10Testing
+    {
+        private double[] Table = new double[49];
+        private readonly int n = 24;
 
-//        [TestMethod]
-//        public void ZeroAndLessThrowError() 
-//        {
-//            var r = new Random();
-//            Console.WriteLine(Math.Log2(10));
-//            for (int i = 0; i < 10_000; i++)
-//                Assert.ThrowsException<ArgumentException>(() =>
-//                    FMath.Log10( r.Next() * (r.NextDouble() - 1))
-//                );
-//        }
-//    }
-//}
+        public Log10Testing() 
+        {
+            for (int i = 0; i < Table.Length; i++)
+                Table[i] = Math.Pow(10, -n + i);
+        }
+
+        [TestMethod]
+        public void TestLookup() 
+        {
+            AreEqual(
+                expected: 2,
+                Lookup(123.456)
+            );
+        }
+
+        public void Setup()
+        {
+            for (int i = 0; i < Table.Length; i++)
+                Table[i] = Math.Pow(10, -n + i);
+        }
+
+        public int Lookup(double param)
+        {
+            var index = BinarySearchForMatch(
+                Table,
+                (n) => Convert.ToInt32(n > param) -
+                    Convert.ToInt32(n < param)
+            );
+            return index - n;
+        }
+
+        public static int BinarySearchForMatch<T>(
+            IList<T> list,
+            Func<T, int> comparer)
+        {
+            int min = 0;
+            int max = list.Count - 1;
+
+            while (min <= max)
+            {
+                int mid = (min + max) / 2;
+                int comparison = comparer(list[mid]);
+
+                if (comparison == -1 && comparer(list[mid + 1]) == 1)
+                    return mid;
+                if (comparison < 0)
+                    min = mid + 1;
+                else
+                    max = mid - 1;
+            }
+            return ~min;
+        }
+    }
+}

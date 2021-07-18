@@ -24,6 +24,7 @@ namespace Game.Tests.MathTesting
                 AreEqual(expected, FMath.Floor3(i + 2));
             }
         }
+
         [TestMethod]
         public void TestFirst100ThousandNegativeIntegers() 
         {
